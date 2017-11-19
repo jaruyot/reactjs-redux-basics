@@ -6,11 +6,13 @@ import { Main } from "../components/Main";
 import { setName } from "../actions/userActions";
 
 class App extends React.Component {
+
+
     render() {
         return (
             <div className="container">
-                <Main changeUsername={() => this.props.setName("Anna")}/>
-                <User username={this.props.user.name}/>
+                <Main changeUsername={this.props.setName} />
+                <User username={this.props.user.name} />
             </div>
         );
     }
@@ -18,8 +20,7 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-      user: state.user,
-      math: state.math
+      user: state.user
   };
 };
 
