@@ -12,6 +12,14 @@ export const User = (props) => {
                 <div className="col-xs-12">
                     <p>User Name: {props.username}</p>
                 </div>
+                <div className="col-xs-12">
+                    <p>Room List:</p>
+                    <ul>
+                        {
+                            props.rooms.roomList.map((r, index) => (<li key={index}>{r}</li>))
+                        }
+                    </ul>
+                </div>
             </div>
         </div>
     );
