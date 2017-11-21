@@ -16,7 +16,7 @@ export const User = (props) => {
                     <p>Room List:</p>
                     <ul>
                         {
-                            props.rooms.roomList.map((r, index) => (<li key={index}>{r}</li>))
+                            props.rooms.map((r, index) => (<li key={index}>{r}</li>))
                         }
                     </ul>
                 </div>

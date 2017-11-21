@@ -8,18 +8,11 @@ import { addRoom } from "../actions/roomActions";
 
 class App extends React.Component {
 
-    roomListChanged = false;
-
-    componentWillReceiveProps(nextProps) {
-        this.roomListChanged = this.props.rooms.roomList !== nextProps.rooms.roomList;
-    }
-
     render() {
         return (
             <div className="container">
                 <Main changeUsername={this.props.setName} addRoom={this.props.addRoom}/>
                 <User username={this.props.user.name} rooms={this.props.rooms}/>
-                { this.roomListChanged && 'room list was changed!' }
             </div>
         );
     }
@@ -28,7 +21,7 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return {
       user: state.user,
-      rooms: state.rooms
+      rooms: state.rooms.roomList
   };
 };
 
